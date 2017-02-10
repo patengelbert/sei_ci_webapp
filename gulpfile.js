@@ -5,6 +5,8 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
+const karma = require('karma');
+const backstop = require('backstopjs');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -124,23 +126,38 @@ gulp.task('serve:dist', ['default'], () => {
   });
 });
 
-gulp.task('serve:test', ['scripts'], () => {
-  browserSync.init({
-    notify: false,
-    port: 9000,
-    ui: false,
-    server: {
-      baseDir: 'test',
-      routes: {
-        '/scripts': '.tmp/scripts',
-        '/bower_components': 'bower_components'
-      }
-    }
-  });
+gulp.task('test:css:reference', () =>
+  backstop('reference')
+);
 
-  gulp.watch('app/scripts/**/*.js', ['scripts']);
-  gulp.watch(['test/spec/**/*.js', 'test/index.html']).on('change', reload);
-  gulp.watch('test/spec/**/*.js', ['lint:test']);
+gulp.task('test:css', () =>
+  backstop('test')
+);
+
+gulp.task('test:css:showreport', () =>
+  backstop('openReport')  
+);
+
+gulp.task('test:js', (done) => {
+  new karma.Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, () => {
+    done();
+  }).start();
+});
+
+gulp.task('test', ['test:js']);
+
+/**
+ * Watch for file changes and re-run tests on each change
+ */
+gulp.task('test:js:server', function (done) {
+  new karma.Server({
+    configFile: __dirname + '/karma.conf.js'
+  }, () => {
+    done();
+  }).start();
 });
 
 // inject bower components
@@ -159,6 +176,6 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', () => {
   return new Promise(resolve => {
     dev = false;
-    runSequence(['clean', 'wiredep'], 'build', resolve);
+    runSequence(['clean', 'wiredep'], 'build', 'test:js:server', resolve);
   });
 });

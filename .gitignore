@@ -3,3 +3,6 @@ dist
 .tmp
 bower_components
 test/bower_components
+backstop_data/*/
+!backstop_data/bitmaps_reference
+!backstop_data/casper_scripts

@@ -1,11 +1,19 @@
-(function () {
+(function() {
   'use strict';
 
-  describe('Give it some context', function () {
-    describe('maybe a bit more context here', function () {
-      it('should run here few assertions', function () {
+  describe('Test main.js', function() {
+    before(function() {
+      // Stuff to do before the tests, like imports, what not
+    });
 
+    describe('#printHello', function() {
+      it("always returns 'Hello World'", function () {
+        expect(printHello()).to.equal("Hello World");
       });
+    });
+
+    after(function() {
+      // Anything after the tests have finished
     });
   });
 })();
