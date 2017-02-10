@@ -7,8 +7,8 @@
     });
 
     describe('#printHello', function() {
-      it("always returns 'Hello World'", function () {
-        expect(printHello()).to.equal("Hello World");
+      it('always returns \'Hello World\'', function () {
+        expect(printHello()).to.equal('Hello World');
       });
     });
 
