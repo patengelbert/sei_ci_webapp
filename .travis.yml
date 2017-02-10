@@ -11,7 +11,7 @@ before_script:
 
 script:
   - gulp test
-  - gulp test:css
+  # - gulp test:css
 
 cache:
   directories:
