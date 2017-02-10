@@ -162,5 +162,3 @@ gulp.task('default', () => {
     runSequence(['clean', 'wiredep'], 'build', resolve);
   });
 });
-
-gulp lint
