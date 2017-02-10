@@ -13,5 +13,9 @@ script:
   - gulp test
   - gulp test:css
 
+cache:
+  directories:
+    - node_modules
+
 addons:
   srcclr: true
