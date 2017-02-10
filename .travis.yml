@@ -11,8 +11,8 @@ before_script:
   - npm install -g gulp
 
 script:
-    gulp test
-    gulp test:css
+  - gulp test
+  - gulp test:css
 
 addons:
   srcclr: true
