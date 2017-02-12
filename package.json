@@ -5,6 +5,9 @@
   "engines": {
     "node": ">=7"
   },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
   "devDependencies": {
     "backstopjs": "^2.3.7",
     "chai": "^3.5.0",
