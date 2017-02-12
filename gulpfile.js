@@ -123,7 +123,7 @@ gulp.task('serve', () => {
 gulp.task('serve:dist', ['default'], () => {
   browserSync.init({
     notify: false,
-    port: 9000,
+    port: process.env.PORT || 9000,
     open: false,
     server: {
       baseDir: ['dist']
