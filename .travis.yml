@@ -1,20 +1,22 @@
-
 language: node_js
 node_js:
-  - "6"
-  - "6.1"
-  - "5.11"
-
+- '6'
+- '6.1'
+- '5.11'
 before_script:
-  - npm install -g gulp bower
-
+- npm install -g gulp bower
 script:
-  - gulp test
-  # - gulp test:css
-
+- gulp test
+- gulp test:css
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 addons:
   srcclr: true
+deploy:
+  provider: heroku
+  api_key:
+    secure: L5vX5bNcxs8zt/cgLhuZXikh1yk5kLnt0lG0zeYHitrQMDQyjXkI+wIZ6zgnvY7DuCmVFmx3UmxWWpL5zlM1G+brJplCwaHjbq1cKkj6jfP9Xk7lLjphdHce9oiCuZ1h8w6pdketkpeHzGqdtGQL83LNJv4L7RjpSHbLsn1blq+VIMFrtCUVphFPbj/6flxW2IUUKafOQo9vvRHdp/omkmFtW10Ox23ri/dV1KBqLfRg+AGq2s1m6F+7NAl19HGU3IYyf5tr4SWUGpa0o+uIBKqNyNJsSUOWFBfK6kB7/GJ7RtLi65gh6hA7/m5oMTWido3dhZTVHaIvIADjpHF3f694YmRzsVRz2soAsTTOpyJ5WF/iXdKVcE+eM2eT2XLQUVgXIysU1qN6BR64o9nzdfjWsdMWvCdoVsKEFfmQnuS4KMgttqR0tfOVFUFh3hj8CGCtCF92FQS7VgluSORAAG6pdvHodc/ytS42ILw6C0yRtvWryNqqkC4Sbm3rIPY9wqNwnUsueBH5I9d1D86EvV10pOrjdlsxOtAyoa/gLusQBn+/F3fVix47DKMVPGraVDpoFB0BaWd3EgOPpM5IkygK3WnFTVGqnc48eWfhp1U7T6QFK+jjBg4K+ugoaZqxkX2j3nunDSLzFDsTrTZcEaKb03rf+9EC4h4VBTS2W7I=
+  app: sei_ci_webapp
+  on:
+    repo: patengelbert/sei_ci_webapp

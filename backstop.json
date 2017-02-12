@@ -33,7 +33,7 @@
       ],
       "readyEvent": null,
       "delay": 500,
-      "misMatchThreshold" : 0.1,
+      "misMatchThreshold" : 5,  // Fonts may be different on differnt pages
       "onBeforeScript": "onBefore.js",
       "onReadyScript": "onReady.js"
     }
