@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=4"
+    "node": ">=7"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",
@@ -50,5 +50,9 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1"
   }
 }
