@@ -6,7 +6,7 @@
     "node": ">=7"
   },
   "scripts": {
-    "postinstall": "mkdir -p bower_components && ./node_modules/bower/bin/bower install"
+    "preinstall": "mkdir -p bower_components && ./node_modules/bower/bin/bower install"
   },
   "devDependencies": {
     "backstopjs": "^2.3.7",
