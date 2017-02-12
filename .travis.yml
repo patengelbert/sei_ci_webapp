@@ -1,8 +1,6 @@
 language: node_js
 node_js:
 - '6'
-- '6.1'
-- '5.11'
 before_script:
 - npm install -g gulp bower
 script:
@@ -16,7 +14,7 @@ addons:
 deploy:
   provider: heroku
   api_key:
-    secure: L5vX5bNcxs8zt/cgLhuZXikh1yk5kLnt0lG0zeYHitrQMDQyjXkI+wIZ6zgnvY7DuCmVFmx3UmxWWpL5zlM1G+brJplCwaHjbq1cKkj6jfP9Xk7lLjphdHce9oiCuZ1h8w6pdketkpeHzGqdtGQL83LNJv4L7RjpSHbLsn1blq+VIMFrtCUVphFPbj/6flxW2IUUKafOQo9vvRHdp/omkmFtW10Ox23ri/dV1KBqLfRg+AGq2s1m6F+7NAl19HGU3IYyf5tr4SWUGpa0o+uIBKqNyNJsSUOWFBfK6kB7/GJ7RtLi65gh6hA7/m5oMTWido3dhZTVHaIvIADjpHF3f694YmRzsVRz2soAsTTOpyJ5WF/iXdKVcE+eM2eT2XLQUVgXIysU1qN6BR64o9nzdfjWsdMWvCdoVsKEFfmQnuS4KMgttqR0tfOVFUFh3hj8CGCtCF92FQS7VgluSORAAG6pdvHodc/ytS42ILw6C0yRtvWryNqqkC4Sbm3rIPY9wqNwnUsueBH5I9d1D86EvV10pOrjdlsxOtAyoa/gLusQBn+/F3fVix47DKMVPGraVDpoFB0BaWd3EgOPpM5IkygK3WnFTVGqnc48eWfhp1U7T6QFK+jjBg4K+ugoaZqxkX2j3nunDSLzFDsTrTZcEaKb03rf+9EC4h4VBTS2W7I=
-  app: sei_ci_webapp
+    secure: WikrLDJVbkM9g/F0SFEGO227OGaqWyYkVAY2/rddmbWy7487cyKXEloX72579Z4UMf4s7ANOSCcVhd4KuM9a50MPQhk4F1uMoXanDqjWLXypw9M6xGXz7/MeJESSblgeYEsaoPtHuIXP9AmviDpL27kuoTA06tu16eXtyjUo7zZNTcbXDgtNSnYSSvoeuY9sHSHWv4G8cbav/CBlMWehdWHylMdWXHaN+GKH0hGEZQsPWXP+ppA3XqJ3O/afLZpfnfBAIYqYAueJcFWpf+vFLn5I3XHohJw6dfLwzc4MZg+4IAL6jY/Cfxyp3p8C5PpyvrrvfkTjBwmJY3hsN+c70D0zxF+UX4k9Ho/kJL1yYdxcepoPulcpSRLY9knNTk+PibY4VZXv2A5pGgrVxofBQx9yAOgvHtGV8v7uzhMFvrQPQ3akn5qoxDcgskcI/bUTdOaZUY8pxflLoN/jt58fgYMQL4fMp0LkK2KA+Hq6If0OoIbRyntC03RyAIsl7A3jzMaXfP6lFkRH1/Ii+ptXMaQsTn3AmDpSCwiq0DKvnRbZD7D11bOXwaEGLxMz00F1GDqIFvZHKvK5KdNGwlDO3Ts7f7XaHVaB/SPeMC4G4+W9sBdVm3y+VsWT6PI62V+DQSukv8GpJcIG7dExmW5MwmPn3BwAIWs8pg2IIoZgfHk=
+  app: warm-shore-75862
   on:
     repo: patengelbert/sei_ci_webapp
