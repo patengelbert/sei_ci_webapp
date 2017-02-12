@@ -11,7 +11,7 @@ const backstop = require('backstopjs');
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-var dev = true;
+var dev = false;
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.css')
@@ -176,6 +176,6 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', () => {
   return new Promise(resolve => {
     dev = false;
-    runSequence(['clean', 'wiredep'], 'build', 'test:js:server', resolve);
+    runSequence(['clean', 'wiredep'], 'build', resolve);
   });
 });
