@@ -1,17 +1,21 @@
 // generated on 2017-02-10 using generator-webapp 2.4.1
 const gulp = require('gulp');
+const util = require("gulp-util");
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync').create();
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
-const karma = require('karma');
-const backstop = require('backstopjs');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-var dev = false;
+var dev = !util.env.production;
+
+if (dev) {
+  var karma = require('karma');
+  var backstop = require('backstopjs');
+}
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.css')
@@ -175,7 +179,6 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 
 gulp.task('default', () => {
   return new Promise(resolve => {
-    dev = false;
     runSequence(['clean', 'wiredep'], 'build', resolve);
   });
 });
